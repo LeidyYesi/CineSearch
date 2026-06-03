@@ -8,7 +8,9 @@ Aplicación web desarrollada con JavaScript que permite buscar películas utiliz
 
 ## 🚀 Demo
 
-Próximamente disponible en GitHub Pages.
+Prueba la aplicación aquí:
+
+https://leidyyesi.github.io/CineSearch/
 
 ## ✨ Características
 
