@@ -18,9 +18,7 @@ const titulo = inputBusqueda.value.trim();
 }
   resultado.innerHTML = "<p>Cargando películas...</p>";
 
-  const texto = inputBusqueda.value;
-  
-  const datos = await buscarPeliculas(texto);
+  const datos = await buscarPeliculas(titulo);
 
   mostrarPeliculas(datos);
 });
