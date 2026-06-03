@@ -1,5 +1,4 @@
-import { API_KEY } from "./config.js";
-
+const API_KEY = "f8e92d19";  // APi_Key publica con fines educativos
 
 export async function buscarPeliculas(titulo) {
   const respuesta = await fetch(
