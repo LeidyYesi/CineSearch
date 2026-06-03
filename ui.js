@@ -20,4 +20,10 @@ export function mostrarPeliculas(datos) {
       </div>
     `;
   });
+ 
+ pelicula.addEventListener("click", () => {
+  console.log(imdbID);
+});
+
+
 }

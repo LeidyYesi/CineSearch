@@ -20,7 +20,13 @@ const titulo = inputBusqueda.value.trim();
 
   const datos = await buscarPeliculas(titulo);
 
+ 
   mostrarPeliculas(datos);
+
+/*  if (datos.Response !== "False") {
+  document.body.classList.add("resultados");
+}*/
+
 });
 
 inputBusqueda.addEventListener("keydown", (event) => {          // Escucha cada tecla que presionas dentro del imput.
