@@ -14,18 +14,22 @@ const titulo = inputBusqueda.value.trim();
     "<p style='color: red;'>Por favor, escribe el nombre de una película.</p>";
 
   inputBusqueda.focus();    //devuelve el foco al input automáticamente para que el usuario escriba nuvamente.
-
   return;
 }
   resultado.innerHTML = "<p>Cargando películas...</p>";
 
   const datos = await buscarPeliculas(titulo);
 
-  datos.Search.sort((a, b) => {
+if (datos.Response === "False") {
+  mostrarPeliculas(datos);
+  return;
+}
+
+datos.Search.sort((a, b) => {
   return Number(b.Year) - Number(a.Year);
 });
 
-  mostrarPeliculas(datos);
+mostrarPeliculas(datos);
 
 document.body.classList.add("resultados");
 
