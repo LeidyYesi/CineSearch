@@ -1,5 +1,6 @@
 import { buscarPeliculas } from "./api.js";
-import { mostrarPeliculas } from "./ui.js";
+import { mostrarPeliculas, mostrarDetalle } from "./ui.js";
+
 
 const boton = document.getElementById("buscar");
 const inputBusqueda = document.getElementById("busqueda");
@@ -20,12 +21,13 @@ const titulo = inputBusqueda.value.trim();
 
   const datos = await buscarPeliculas(titulo);
 
- 
+  datos.Search.sort((a, b) => {
+  return Number(b.Year) - Number(a.Year);
+});
+
   mostrarPeliculas(datos);
 
-/*  if (datos.Response !== "False") {
-  document.body.classList.add("resultados");
-}*/
+document.body.classList.add("resultados");
 
 });
 
