@@ -63,9 +63,9 @@ button {
   width: 220px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
   animation: aparecer 0.5s ease;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .pelicula:hover {
@@ -95,14 +95,22 @@ button {
 #modal {
   position: fixed;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.8);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
+  animation: aparecerModal 0.3s ease;
+}
+
+@keyframes aparecerModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .oculto {
@@ -110,27 +118,59 @@ button {
 }
 
 .modal-contenido {
-  background: white;
-  color: black;
-
+  background-image: url("./images/fondo_detalle.png");
+  color: #cccad6;
+  background-size: cover;
+  position: relative; 
   max-width: 700px;
   width: 90%;
-
   padding: 20px;
-
   border-radius: 12px;
-
   overflow-y: auto;
   max-height: 90vh;
+  box-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+
+
+.modal-contenido h2,
+.modal-contenido p,
+.modal-contenido strong {
+  text-shadow: 1px 1px 3px rgba(0,0,0,.8);
+}
+
+.modal-contenido h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.modal-contenido p {
+  margin-bottom: 15px;
 }
 
 .modal-contenido img {
   width: 250px;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
+
 .cerrar {
-  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #1f4064;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.4);
+}
+
+.cerrar:hover {
+  transform: scale(1.10);
 }
